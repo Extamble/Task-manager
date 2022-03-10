@@ -6,14 +6,14 @@
   font-family: "Montserrat", Arial, Helvetica, sans-serif;
 }
 .header {
-  width: 92%;
-  margin: 1% auto;
+  width: 98%;
+  margin: 2vh auto;
   text-align: right;
 }
 
 .wrapper {
-  width: 92%;
-  height: 85vh;
+  width: 98%;
+  height: 88vh;
   margin: 0 auto;
   background-color: rgb(151, 151, 151);
   border-radius: 20px;
@@ -67,7 +67,7 @@
 .searchTask {
   display: block;
   position: relative;
-  bottom: 20px;
+  bottom: -30px;
   margin: 0 auto;
   width: 30%;
   min-width: 130px;
@@ -122,10 +122,6 @@ div .gridContainer-top:hover {
   opacity: 0.8;
 }
 
-.creator {
-  font-size: 2rem;
-}
-
 .invisible {
   display: none;
 }
@@ -158,8 +154,9 @@ div .gridContainer-top:hover {
   .gridContainer {
     grid-template-columns: 0.7fr 2fr 0.8fr 0.8fr;
   }
-  .gridItem--round-right,
-  .gridItem--state {
+
+  .gridItem--deadline,
+  .gridItem--bold-deadline {
     display: none;
   }
 
