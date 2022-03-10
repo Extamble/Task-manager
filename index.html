@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0" />
+    <title>Task Menager</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="modal.css">
+</head>
+
+<body>
+
+    <div class="header">
+        <h1 class="taskCounter">Task number : <span class="taskCounter__span">0</span></h1>
+        <button class="addNewElement">+ Add new task</button>
+    </div>
+
+    <div class="wrapper">
+
+        <div class="gridContainer gridContainer-top">
+            <div class="gridItem gridItem--bold">Name</div>
+            <div class="gridItem gridItem--bold">Description</div>
+            <div class="gridItem gridItem--bold gridItem--bold-creationdate">Create Date</div>
+            <div class="gridItem gridItem--bold gridItem--bold-deadline">Deadline</div>
+            <div class="gridItem gridItem--bold gridItem--round-right">State</div>
+        </div>
+        <div class="dataStore">
+
+        </div>
+        <input class="searchTask" type="text" placeholder="Search task">
+    </div>
+
+
+    <div class="modal">
+
+        <button class="modal__exit">&times;</button>
+
+        <div class="modal__form">
+            <div class="form__element form__element--name">
+                <label class="element__label">Task name</label>
+                <input class="element__input js-input-name" type="text" placeholder="Enter new task name" required>
+                <p class="element__para js-para--name">Too short name. Name should have at least 5 letters.</p>
+            </div>
+
+            <div class="form__element form__element--description">
+                <label class="element__label">Description</label>
+                <textarea class="element__input element__input--area" name="" id="" cols="30" rows="10"></textarea>
+                <p class="element__para--letters">Letters: <span class="element__para--letters js-letters">0</span>/100
+                </p>
+                <p class="element__para js-para--description">Too many letters.</p>
+            </div>
+
+
+            <div class="form__element form__element--create">
+                <label class="element__label">Creation date</label>
+                <input class="element__input element__input--create" type="date" autocomplete="bday">
+            </div>
+
+            <div class="form__element form__element--deadline">
+                <label class="element__label">Deadline</label>
+                <input class="element__input element__input--deadline" type="date">
+            </div>
+            <div class="form__element form__element--state">
+                <label class="element__label">State</label>
+                <select class="element__input element__input--state" name="" id="">
+                    <option value="Done">Done</option>
+                    <option value="In progress">In progress</option>
+                    <option value="Awaits">Awaits</option>
+                </select>
+            </div>
+
+            <div class="form__buttons">
+                <button class="form__button form__button--change form__button--invisible">Change</button>
+                <button class="form__button form__button--continue">Create</button>
+                <button class="form__button form__button--cancel">Cancel</button>
+                <button class="form__button form__button--delete form__button--invisible">Delete</button>
+            </div>
+        </div>
+
+
+    </div>
+    <div class="overlay"></div>
+
+    <p class="creator">Created by Andrzej Nowak</p>
+</body>
+<script src="AddNewTask.js"></script>
+<script src="SearchTask.js"></script>
+
+</html>

@@ -1,0 +1,220 @@
+.modal {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  width: 70%;
+  height: 80%;
+  z-index: 10;
+  transform: translate(-50%, -50%) scale(0);
+  box-shadow: 0 0 10px 5px black;
+  background-color: white;
+  transition: 200ms ease-in-out;
+}
+
+.modal__exit {
+  display: block;
+  position: relative;
+  left: 100%;
+  width: 5vh;
+  min-width: 35px;
+  height: 5vh;
+  min-height: 35px;
+  transform: translate(-50%, -50%);
+  border: 2px solid black;
+  border-radius: 50%;
+  background-color: white;
+  line-height: 5vh;
+  text-align: center;
+  font-size: 5vh;
+  cursor: pointer;
+}
+
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.7);
+  opacity: 0;
+  pointer-events: none;
+  transition: 200ms;
+}
+
+.overlay--active {
+  opacity: 1;
+  pointer-events: all;
+}
+
+.modal--active {
+  transform: translate(-50%, -50%) scale(1);
+}
+
+.modal__form {
+  display: grid;
+  width: 80%;
+  height: 90%;
+  margin: 0 auto;
+  grid-column-gap: 2%;
+  grid-template-areas:
+    "name name"
+    "description create"
+    "description deadline"
+    "description state"
+    " buttons buttons";
+  grid-template-columns: 50% 50%;
+  grid-template-rows: repeat(5, 20%);
+}
+
+.form__element--name {
+  grid-area: name;
+}
+
+.form__element--description {
+  grid-area: description;
+}
+
+.form__element--create {
+  grid-area: create;
+}
+
+.form__element--remind {
+  grid-area: remind;
+}
+
+.form__element--deadline {
+  grid-area: deadline;
+}
+
+.form__element--state {
+  grid-area: state;
+}
+
+.form__buttons {
+  grid-area: buttons;
+}
+
+.form__element {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  margin: 0 10%;
+}
+
+.element__para {
+  text-align: center;
+  margin: 0.5%;
+  color: red;
+  font-size: 19px;
+  display: none;
+}
+
+.element__para--letters {
+  margin: 0;
+  width: 100%;
+  text-align: right;
+  font-size: 20px;
+}
+
+.element__input,
+.element__label,
+.element__input option,
+.form__button {
+  font-size: 30px;
+}
+
+.element__label {
+  font-weight: bold;
+}
+
+.element__input {
+  margin-top: 2%;
+  border: 1px solid black;
+  text-align: center;
+}
+
+.element__input--area {
+  height: 80%;
+  display: block;
+  text-align: left;
+}
+
+.form__buttons {
+  text-align: center;
+}
+
+.form__button {
+  width: 20%;
+  height: 50%;
+  margin: 3% 3% 0;
+  border-radius: 20px;
+}
+
+.form__button--invisible {
+  display: none;
+}
+
+.element__para--visible {
+  display: block;
+}
+
+@media (max-width: 1350px) {
+  .element__input,
+  .element__label,
+  .element__input option,
+  .form__button {
+    font-size: 22px;
+  }
+
+  .element__para {
+    font-size: 19px;
+  }
+}
+
+@media (max-width: 850px) {
+  .modal__form {
+    grid-column-gap: 2%;
+    grid-template-areas:
+      "name"
+      "description"
+      "create"
+      "deadline"
+      " state"
+      "buttons";
+    grid-template-columns: 100%;
+    grid-template-rows: 15% 60% 15% 15% 15% 10%;
+    overflow: hidden;
+    overflow-y: scroll;
+    /* grid-template-rows: repeat(6, 15.5%); */
+  }
+
+  .form__element {
+    justify-content: center;
+  }
+
+  .element__input,
+  .element__label,
+  .element__input option,
+  .form__button {
+    font-size: 16px;
+  }
+
+  .element__para {
+    font-size: 12px;
+  }
+
+  .element__para--letters {
+    font-size: 14px;
+  }
+
+  .form__button {
+    width: 35%;
+  }
+}
+
+@media (orientation: landscape) and (max-width: 850px) {
+  .modal__form {
+    height: 80%;
+    grid-template-rows: 30% 60% 30% 30% 30% 30% 30%;
+  }
+}

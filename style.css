@@ -1,0 +1,182 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat&display=swap");
+
+* {
+  font-size: 10px;
+  box-sizing: border-box;
+  font-family: "Montserrat", Arial, Helvetica, sans-serif;
+}
+.header {
+  width: 92%;
+  margin: 1% auto;
+  text-align: right;
+}
+
+.wrapper {
+  width: 92%;
+  height: 85vh;
+  margin: 0 auto;
+  background-color: rgb(151, 151, 151);
+  border-radius: 20px;
+  border: 2px black solid;
+  box-shadow: 0 0 1em 0.2em black;
+  overflow: hidden;
+}
+
+.dataStore {
+  overflow-y: scroll;
+  height: 85%;
+}
+
+.dataStore::-webkit-scrollbar,
+*::-webkit-scrollbar {
+  display: none;
+}
+
+.addNewElement {
+  margin: auto;
+  width: 20%;
+  min-width: 130px;
+  background-color: white;
+  border: 2px black solid;
+  border-radius: 20px;
+  font-size: 2rem;
+  cursor: pointer;
+  transition: 300ms;
+}
+
+.addNewElement:hover {
+  box-shadow: 0 0 1em 0.2em black;
+  background-color: rgb(82, 82, 82);
+  color: white;
+}
+
+.taskCounter {
+  float: left;
+  text-align: center;
+  font-size: 2.5rem;
+  cursor: default;
+  margin: 0 1%;
+  color: rgb(82, 82, 82);
+  text-decoration: underline;
+}
+
+.taskCounter__span {
+  font-size: 1em;
+}
+
+.searchTask {
+  display: block;
+  position: relative;
+  bottom: 20px;
+  margin: 0 auto;
+  width: 30%;
+  min-width: 130px;
+  border: 2px solid black;
+  border-radius: 20px;
+  font-size: 2rem;
+  text-align: center;
+  line-height: 3rem;
+}
+
+.searchTask:focus {
+  background-color: rgb(82, 82, 82);
+  color: white;
+}
+
+.gridContainer {
+  padding: 0.5% 0;
+  display: grid;
+  grid-template-columns: 0.9fr 2fr 0.6fr 0.6fr 0.8fr;
+  transition: 300ms;
+}
+.gridContainer-top {
+  padding: 0;
+}
+.gridContainer:hover {
+  background-color: rgb(179, 178, 178);
+}
+div .gridContainer-top:hover {
+  background-color: rgb(151, 151, 151);
+}
+
+.gridItem {
+  font-size: 2rem;
+  text-align: center;
+  margin: auto 0;
+  cursor: default;
+  color: black;
+  overflow-wrap: break-word;
+  word-break: break-all;
+  padding: 7px 2%;
+}
+
+.gridItem--bold {
+  box-shadow: 0 0 1em white;
+  color: white;
+}
+
+.gridItem--state {
+  max-height: 40px;
+  border-radius: 1em;
+  margin: auto 10%;
+  opacity: 0.8;
+}
+
+.creator {
+  font-size: 2rem;
+}
+
+.invisible {
+  display: none;
+}
+
+@media (max-width: 1400px) {
+  .gridItem {
+    font-size: 1.8rem;
+  }
+
+  .addNewElement,
+  .taskCounter,
+  .searchTask {
+    font-size: 1.7rem;
+  }
+}
+
+@media (max-width: 1100px) {
+  .gridItem {
+    font-size: 1.5rem;
+  }
+
+  .addNewElement,
+  .taskCounter,
+  .searchTask {
+    font-size: 1.3rem;
+  }
+}
+
+@media (max-width: 900px) {
+  .gridContainer {
+    grid-template-columns: 0.7fr 2fr 0.8fr 0.8fr;
+  }
+  .gridItem--round-right,
+  .gridItem--state {
+    display: none;
+  }
+
+  .gridItem {
+    font-size: 1.2rem;
+  }
+}
+
+@media (max-width: 600px) {
+  .gridContainer {
+    grid-template-columns: 0.7fr 2fr 0.8fr;
+  }
+  .gridItem--bold-creationdate,
+  .gridItem--creation {
+    display: none;
+  }
+  .gridItem {
+    font-size: 1rem;
+  }
+}
