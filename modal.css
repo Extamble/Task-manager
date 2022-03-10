@@ -52,10 +52,10 @@
 
 .modal__form {
   display: grid;
-  width: 80%;
-  height: 90%;
-  margin: 0 auto;
-  grid-column-gap: 2%;
+  width: 95%;
+  height: 100%;
+  margin: -40px auto;
+  grid-column-gap: 1%;
   grid-template-areas:
     "name name"
     "description create"
@@ -98,7 +98,7 @@
   text-align: center;
   display: flex;
   flex-direction: column;
-  margin: 0 10%;
+  margin: 0 5%;
 }
 
 .element__para {
@@ -182,10 +182,9 @@
       " state"
       "buttons";
     grid-template-columns: 100%;
-    grid-template-rows: 15% 60% 15% 15% 15% 10%;
+    grid-template-rows: 15% 60% 10% 10% 10% 10%;
     overflow: hidden;
     overflow-y: scroll;
-    /* grid-template-rows: repeat(6, 15.5%); */
   }
 
   .form__element {
@@ -196,7 +195,7 @@
   .element__label,
   .element__input option,
   .form__button {
-    font-size: 16px;
+    font-size: 14px;
   }
 
   .element__para {
@@ -212,9 +211,9 @@
   }
 }
 
-@media (orientation: landscape) and (max-width: 850px) {
+/* @media (orientation: landscape) and (max-width: 850px) {
   .modal__form {
     height: 80%;
     grid-template-rows: 30% 60% 30% 30% 30% 30% 30%;
   }
-}
+} */
